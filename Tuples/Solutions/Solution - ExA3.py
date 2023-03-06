@@ -7,6 +7,13 @@ def count_vowels(text):
     count = count + text.count("u")
     return count
 
+def count_vowels_improved(text):
+    vowels = ["a","e","i","o","u"]
+    count = 0
+    for letter in vowels:
+        count += text.count(letter)
+    return count
+
 
 filename = input("Please enter the student file name: ")
 
@@ -17,4 +24,4 @@ with open(filename) as file_handle:
         
 student_tuple = tuple(student_names)
 for student in student_tuple:
-    print("Student", student, "has", count_vowels(student.lower()), "vowels in their name.")
+    print("Student", student, "has", count_vowels_improved(student.lower()), "vowels in their name.")
